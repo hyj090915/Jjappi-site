@@ -1,6 +1,6 @@
 // The download button always targets the newest GitHub release. The static
 // link works with no script; the API call only adds the version and date.
-const REPO = 'hyj090915/jjappi';
+const REPO = 'hyj090915/Jjappi';
 const ASSET = 'Jjappi-mac.zip';
 const downloads = document.querySelectorAll('[data-download]');
 for (const link of downloads) link.href = `https://github.com/${REPO}/releases/latest/download/${ASSET}`;
