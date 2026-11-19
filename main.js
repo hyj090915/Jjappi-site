@@ -29,7 +29,38 @@ fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {headers: {Accept:
   });
 
 const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-document.querySelectorAll('.pal').forEach((pal, index) => pal.style.setProperty('--n', index));
+// Seeded so the hand-made wobble looks the same on every visit.
+let seed = 7;
+const wobble = (min, max) => { seed = (seed * 9301 + 49297) % 233280; return min + (seed / 233280) * (max - min); };
+
+// Each letter of a heading sits a little crooked, like hand lettering.
+for (const heading of document.querySelectorAll('[data-jitter]')) {
+  const nodes = [...heading.childNodes];
+  heading.replaceChildren();
+  for (const node of nodes) {
+    if (node.nodeType !== Node.TEXT_NODE) { heading.append(node); continue; }
+    for (const char of node.textContent) {
+      if (char === ' ') { heading.append(' '); continue; }
+      const span = document.createElement('span');
+      span.className = 'jit';
+      span.textContent = char;
+      span.style.setProperty('--r', `${wobble(-7, 7).toFixed(1)}deg`);
+      span.style.setProperty('--y', `${wobble(-5, 5).toFixed(1)}px`);
+      span.style.setProperty('--s', wobble(.92, 1.12).toFixed(2));
+      heading.append(span);
+    }
+  }
+  heading.setAttribute('aria-label', heading.textContent);
+}
+
+// Friends in the parade differ a little in size, tilt and footing.
+document.querySelectorAll('.pal').forEach((pal, index) => {
+  pal.style.setProperty('--n', index);
+  pal.style.marginBottom = `${wobble(-6, 14).toFixed(0)}px`;
+  const img = pal.querySelector('img');
+  img.style.rotate = `${wobble(-6, 6).toFixed(1)}deg`;
+  img.style.scale = wobble(.88, 1.1).toFixed(2);
+});
 
 // A little confetti burst when someone grabs a ticket.
 const confettiColors = ['#f6b8c6', '#fbe39b', '#bfe3d0', '#bcd9f2', '#fff8e8'];

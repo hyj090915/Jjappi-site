@@ -160,3 +160,51 @@ h3 { font-size: 46px; line-height: 1; }
   html { scroll-behavior: auto; }
   *, *::before { animation: none !important; transition: none !important; }
 }
+
+/* Irregular, hand-made layer: letters, doodles, tape and a scattered ticket collage. */
+.jit { display: inline-block; transform: translateY(var(--y)) rotate(var(--r)) scale(var(--s)); transform-origin: 50% 80%; }
+.doodle { position: absolute; width: 56px; pointer-events: none; animation: wiggle 3.6s ease-in-out infinite; }
+.d-star-a { top: 48px; left: 52%; width: 50px; }
+.d-heart-a { bottom: 48px; left: 3%; width: 38px; animation-delay: -1.2s; }
+.d-bang-a { top: 120px; left: 2%; width: 34px; animation-delay: -2s; }
+.rides { position: relative; }
+.d-swirl-a { top: 36px; left: 34%; width: 64px; }
+.d-spark-a { top: 120px; right: 9%; width: 44px; animation-delay: -1.6s; }
+.d-star-b { bottom: 40px; left: 46%; width: 42px; animation-delay: -.8s; }
+.faq { position: relative; }
+.d-heart-b { top: 40px; right: 6%; width: 46px; }
+.d-spark-b { bottom: 30px; right: 18%; width: 36px; animation-delay: -2.2s; }
+@keyframes wiggle { 0%, 100% { transform: rotate(-8deg) scale(1); } 50% { transform: rotate(8deg) scale(1.08); } }
+
+.torn { display: block; width: 100%; height: 48px; margin-top: -1px; position: relative; z-index: 1; }
+.awning { margin-top: -18px; }
+
+.rides h2 { margin-left: 4vw; transform: rotate(-2deg); }
+.tickets { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0; max-width: 1240px; }
+.ticket { margin: 0; }
+.ticket:nth-child(1) { grid-column: 1 / span 6; transform: rotate(-3deg); margin: 0 0 0 2%; }
+.ticket:nth-child(2) { grid-column: 7 / span 5; transform: rotate(2.5deg) translateY(70px); }
+.ticket:nth-child(3) { grid-column: 2 / span 5; transform: rotate(1.8deg) translateY(-10px); margin-top: 40px; }
+.ticket:nth-child(4) { grid-column: 7 / span 6; transform: rotate(-2.2deg) translateY(90px); margin-left: 6%; }
+.ticket:nth-child(5) { grid-column: 1 / span 5; transform: rotate(-1deg); margin-top: 70px; }
+.ticket:nth-child(6) { grid-column: 6 / span 6; transform: rotate(3.4deg) translateY(110px); margin-left: 10%; }
+.tickets { padding-bottom: 120px; }
+.ticket:hover { transform: rotate(0) translateY(-6px) scale(1.02); z-index: 2; }
+.ticket::after { content: ''; position: absolute; top: -14px; left: 42%; width: 92px; height: 26px; background: rgba(251, 227, 155, .78); border: 1.5px solid rgba(91,64,49,.25); transform: rotate(-6deg); }
+.ticket:nth-child(even)::after { left: auto; right: 12%; transform: rotate(7deg); background: rgba(246, 184, 198, .75); }
+.ticket:nth-child(3n)::after { background: rgba(191, 227, 208, .8); }
+
+.sky-copy { padding-left: 2vw; }
+.sky-copy p { margin-left: 8%; transform: rotate(-.6deg); }
+.admission { transform: rotate(-2.4deg); margin-left: 3vw; }
+.steps li:nth-child(1) { transform: rotate(-1.5deg); }
+.steps li:nth-child(2) { transform: rotate(1.2deg) translateY(14px); }
+.steps li:nth-child(3) { transform: rotate(-.8deg) translateY(-6px); }
+.faq details:nth-child(odd) { transform: rotate(-.5deg); margin-left: 2%; }
+
+@media (max-width: 860px) {
+  .tickets { display: flex; flex-direction: column; gap: var(--space-xl); padding-bottom: 0; }
+  .ticket:nth-child(n) { margin: 0; transform: rotate(calc((var(--k, 1)) * 1deg)); }
+  .ticket:nth-child(even) { --k: -1.5; }
+  .doodle { width: 32px; }
+}
