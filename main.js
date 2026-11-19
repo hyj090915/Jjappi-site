@@ -21,10 +21,10 @@ fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {headers: {Accept:
   })
   .catch(error => {
     if (error.message !== 'no-release') return;
-    version.textContent = '첫 버전을 준비하고 있어요';
+    version.textContent = '아직 첫 버전이 올라오지 않았어요';
     for (const link of downloads) {
       link.setAttribute('aria-disabled', 'true');
-      link.textContent = '곧 만나요';
+      link.textContent = '준비 중';
     }
   });
 
