@@ -65,9 +65,6 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .stage:hover .pal.peek-right { transform: translateX(8px); }
 .stage:hover .pal.lean-left, .stage:hover .pal.lean-right { transform: rotate(3deg); }
 
-/* A paw drawn with the same line and colour as the art, holding the edge. */
-.paw { position: absolute; z-index: 3; width: 20px; height: 14px; background: var(--paw); border: 1.8px solid var(--line); border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%; transition: transform 260ms var(--ease); }
-.stage:hover .paw { transform: translateY(-2px); }
 
 .about .stage { margin-top: 56px; }
 .about .box { text-align: center; padding: var(--space-2xl) var(--space-xl) var(--space-xl); }
@@ -118,5 +115,5 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .pal, .paw, .button { transition: none; }
+  .pal, .button { transition: none; }
 }
