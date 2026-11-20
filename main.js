@@ -31,6 +31,9 @@ fetch(`https://api.github.com/repos/${REPO}/releases/latest`, {headers: {Accept:
 // Browsers only autoplay muted video; this unmutes through the player's
 // postMessage interface.
 const video = document.querySelector('#hero-video');
+// The player wants to know which site embeds it; without it some visitors
+// get YouTube's bot check instead of the video.
+video.src += `&origin=${encodeURIComponent(location.origin)}`;
 const sound = document.querySelector('#sound-toggle');
 sound.addEventListener('click', () => {
   const on = sound.getAttribute('aria-pressed') !== 'true';
