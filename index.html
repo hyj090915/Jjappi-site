@@ -3,155 +3,125 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>짜삐 · 바탕화면에 사는 작은 친구</title>
-<meta name="description" content="맥 바탕화면에 사는 작은 친구 짜삐. 대화하고, 메시지를 알려 주고, 급식도 챙겨 줘요. 무료.">
-<meta property="og:title" content="짜삐 · 바탕화면에 사는 작은 친구">
-<meta property="og:description" content="맥 바탕화면에 사는 작은 친구. 무료, 이 맥 안에서만 동작해요.">
+<title>Jjappi · 맥 바탕화면 캐릭터 도우미</title>
+<meta name="description" content="맥 바탕화면에 사는 캐릭터 도우미 Jjappi. AI 대화, 메신저 알림, 급식 확인. 무료.">
+<meta property="og:title" content="Jjappi · 맥 바탕화면 캐릭터 도우미">
+<meta property="og:description" content="맥 바탕화면에 사는 캐릭터 도우미. 무료, 기록은 이 맥에만 저장돼요.">
 <meta property="og:image" content="/assets/cast/hachiware-sing.webp">
-<link rel="icon" href="/assets/cast/usagi-happy.webp">
+<link rel="icon" href="/assets/faces/usagi.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <script src="/main.js" defer></script>
 </head>
 <body>
-<!-- Shared hand-drawn wobble: every brown line on the page goes through it. -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <filter id="wobble"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter>
-</svg>
-
 <header class="topbar">
-  <a class="logo" href="#top">짜삐</a>
-  <nav aria-label="페이지 이동"><a href="#rides">기능</a><a href="#booth">다운로드</a></nav>
+  <a class="logo" href="#top">Jjappi</a>
+  <nav aria-label="페이지 이동"><a href="#features">Features</a><a href="#download">Download</a></nav>
 </header>
 
 <main id="top">
-  <section class="hero" aria-label="짜삐">
+  <section class="hero" aria-label="Jjappi">
     <div class="hero-video" aria-hidden="true">
       <iframe id="hero-video" title="『映画ちいかわ 人魚の島のひみつ』 ノンクレジットオープニング映像"
         src="https://www.youtube-nocookie.com/embed/Tz7hdJ5wsyY?autoplay=1&mute=1&loop=1&playlist=Tz7hdJ5wsyY&controls=0&playsinline=1&rel=0&modestbranding=1&enablejsapi=1"
         allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" tabindex="-1"></iframe>
     </div>
     <div class="hero-shade"></div>
-    <svg class="bunting" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 8 Q600 70 1200 8" fill="none" stroke="#5b4031" stroke-width="2.5" filter="url(#wobble)"/>
-      <g stroke="#5b4031" stroke-width="2" stroke-linejoin="round" filter="url(#wobble)">
-        <path d="M40 17 L70 22 L52 58Z" fill="#f6b8c6"/><path d="M110 28 L142 33 L122 70Z" fill="#fbe39b"/>
-        <path d="M185 37 L218 41 L197 79Z" fill="#bfe3d0"/><path d="M262 44 L296 47 L276 85Z" fill="#bcd9f2"/>
-        <path d="M342 49 L376 51 L356 89Z" fill="#f6b8c6"/><path d="M424 52 L458 53 L440 90Z" fill="#fbe39b"/>
-        <path d="M507 53 L541 53 L524 90Z" fill="#bfe3d0"/><path d="M590 53 L624 53 L607 90Z" fill="#bcd9f2"/>
-        <path d="M673 52 L707 52 L690 90Z" fill="#f6b8c6"/><path d="M756 50 L790 49 L772 89Z" fill="#fbe39b"/>
-        <path d="M838 46 L872 44 L853 85Z" fill="#bfe3d0"/><path d="M920 40 L953 37 L933 79Z" fill="#bcd9f2"/>
-        <path d="M1000 32 L1032 28 L1012 70Z" fill="#f6b8c6"/><path d="M1078 23 L1110 18 L1090 58Z" fill="#fbe39b"/>
-      </g>
-    </svg>
     <div class="hero-copy">
-      <div class="marquee"><h1>짜삐</h1><span class="bulbs" aria-hidden="true"></span></div>
-      <p>맥 바탕화면 캐릭터 도우미</p>
-      <a class="button" href="#booth" data-download data-confetti>무료 다운로드</a>
+      <h1>Jjappi</h1>
+      <p>맥 바탕화면에 사는 캐릭터 도우미</p>
+      <a class="button" href="#download" data-download>무료 다운로드</a>
     </div>
     <button type="button" class="sound" id="sound-toggle" aria-pressed="false">소리 켜기</button>
   </section>
 
-  <div class="parade" aria-label="함께하는 친구들">
-    <svg class="hill" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 70 C180 30 340 60 520 48 C720 34 880 70 1060 52 C1220 36 1340 50 1440 44 L1440 160 L0 160Z" fill="#cfe8bf" stroke="#5b4031" stroke-width="2.5" filter="url(#wobble)"/>
-      <g stroke="#5b4031" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#wobble)">
-        <path d="M90 62 l4 -12 M98 62 l2 -15 M106 62 l-1 -11"/><path d="M640 50 l4 -12 M648 50 l2 -15 M656 50 l-1 -11"/><path d="M1290 46 l4 -12 M1298 46 l2 -15 M1306 46 l-1 -11"/>
-      </g>
-      <g stroke="#5b4031" stroke-width="1.6" filter="url(#wobble)"><circle cx="300" cy="62" r="6" fill="#fff4c9"/><circle cx="960" cy="60" r="6" fill="#f6b8c6"/><circle cx="1180" cy="48" r="5" fill="#fff4c9"/></g>
-    </svg>
-    <div class="parade-row">
-      <button type="button" class="pal" data-hop="sing"><img src="/assets/cast/hachiware-neutral.webp" alt="하치와레"></button>
-      <button type="button" class="pal" data-hop="joy"><img src="/assets/cast/chiikawa-neutral.webp" alt="치이카와"></button>
-      <button type="button" class="pal pal-tall" data-hop="happy"><img src="/assets/cast/usagi-neutral.webp" alt="우사기"></button>
-      <button type="button" class="pal" data-hop="smug"><img src="/assets/cast/momonga-neutral.webp" alt="모몽가"></button>
-      <button type="button" class="pal" data-hop="kyaa"><img src="/assets/cast/kurimanju-neutral.webp" alt="쿠리만쥬"></button>
-      <button type="button" class="pal" data-hop="confident"><img src="/assets/cast/rakko-neutral.webp" alt="랏코"></button>
-      <button type="button" class="pal" data-hop="positive"><img src="/assets/cast/shisa-neutral.webp" alt="시사"></button>
-      <button type="button" class="pal" data-hop="positive"><img src="/assets/cast/kani-neutral.webp" alt="카니"></button>
-      <button type="button" class="pal" data-hop="positive"><img src="/assets/cast/kabutomushi-neutral.webp" alt="풍뎅이"></button>
-    </div>
-  </div>
-
-  <section class="sky">
-    <svg class="cloud c1" viewBox="0 0 220 110" aria-hidden="true"><path d="M30 86 C6 86 6 54 34 54 C34 26 74 18 90 40 C102 14 150 14 156 46 C190 40 210 70 186 86Z" fill="#fffdf6" stroke="#5b4031" stroke-width="2.5" filter="url(#wobble)"/></svg>
-    <svg class="cloud c2" viewBox="0 0 220 110" aria-hidden="true"><path d="M30 86 C6 86 6 54 34 54 C34 26 74 18 90 40 C102 14 150 14 156 46 C190 40 210 70 186 86Z" fill="#fffdf6" stroke="#5b4031" stroke-width="2.5" filter="url(#wobble)"/></svg>
-    <svg class="cloud c3" viewBox="0 0 220 110" aria-hidden="true"><path d="M30 86 C6 86 6 54 34 54 C34 26 74 18 90 40 C102 14 150 14 156 46 C190 40 210 70 186 86Z" fill="#fffdf6" stroke="#5b4031" stroke-width="2.5" filter="url(#wobble)"/></svg>
-    <div class="sky-copy">
-      <h2 data-jitter>바탕화면에 캐릭터가<br>살면서 도와줘요</h2>
-      <svg class="doodle d-star-a" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 6 L36 22 L53 23 L40 34 L44 51 L30 41 L16 51 L20 34 L7 23 L24 22Z" fill="#fbe39b" stroke="#5b4031" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)"/></svg><svg class="doodle d-heart-a" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 50 C10 36 6 24 14 16 C21 10 28 14 30 20 C32 14 39 10 46 16 C54 24 50 36 30 50Z" fill="#f6b8c6" stroke="#5b4031" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)"/></svg><svg class="doodle d-bang-a" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 8 L27 36 M30 46 L30 48" fill="none" stroke="#5b4031" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)"/></svg>
-      <p>캐릭터를 눌러 AI와 대화하고, 카톡·디스코드·인스타 알림과 급식을 확인해요. 무료이고, 기록은 이 맥에만 저장돼요.</p>
-    </div>
-    <div class="wheel" aria-hidden="true">
-      <svg class="wheel-frame" viewBox="0 0 400 400">
-        <g stroke="#5b4031" stroke-width="3" fill="none" filter="url(#wobble)">
-          <circle cx="200" cy="200" r="170"/><circle cx="200" cy="200" r="150" stroke-width="2"/><circle cx="200" cy="200" r="22" fill="#f6b8c6"/>
-          <path d="M200 30 V370 M30 200 H370 M80 80 L320 320 M320 80 L80 320 M135 43 L265 357 M265 43 L135 357 M43 135 L357 265 M43 265 L357 135"/>
-        </g>
-      </svg>
-      <div class="gondolas">
-        <span style="--i:0"><img src="/assets/cast/hachiware-sing.webp" alt=""></span>
-        <span style="--i:1"><img src="/assets/cast/chiikawa-joy.webp" alt=""></span>
-        <span style="--i:2"><img src="/assets/cast/usagi-happy.webp" alt=""></span>
-        <span style="--i:3"><img src="/assets/cast/momonga-smug.webp" alt=""></span>
-        <span style="--i:4"><img src="/assets/cast/kurimanju-savor.webp" alt=""></span>
-        <span style="--i:5"><img src="/assets/cast/rakko-confident.webp" alt=""></span>
-        <span style="--i:6"><img src="/assets/cast/shisa-positive.webp" alt=""></span>
-        <span style="--i:7"><img src="/assets/cast/kani-positive.webp" alt=""></span>
-        <span style="--i:8"><img src="/assets/cast/kabutomushi-positive.webp" alt=""></span>
+  <section class="about">
+    <div class="stage">
+      <img class="pal sit" src="/assets/cast/usagi-neutral.webp" alt="" style="--x: 40px; --w: 120px">
+      <div class="window wide">
+        <div class="titlebar"><i></i><i></i><i></i><span>About</span></div>
+        <div class="window-body">
+          <h2>바탕화면에서 같이 지내는<br>작은 도우미</h2>
+          <p>캐릭터를 누르면 AI와 대화하고, 카카오톡·디스코드·인스타 알림과 오늘 급식을 알려 줘요. 무료이고, 기록은 이 맥에만 저장돼요.</p>
+        </div>
       </div>
-      <svg class="wheel-stand" viewBox="0 0 400 200"><path d="M200 10 L110 190 M200 10 L290 190 M90 190 H310" stroke="#5b4031" stroke-width="4" stroke-linecap="round" fill="none" filter="url(#wobble)"/></svg>
     </div>
   </section>
 
-  <svg class="torn" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1440 V22 C1380 40 1330 18 1270 30 C1200 46 1150 20 1080 34 C1010 48 960 22 890 36 C820 50 770 24 700 32 C620 42 580 18 500 30 C430 42 380 22 300 36 C230 48 170 20 100 32 C60 40 30 30 0 36Z" fill="#fbf3e2" stroke="#5b4031" stroke-width="2.5" filter="url(#wobble)"/></svg>
-  <div class="awning" aria-hidden="true"></div>
-
-  <section id="rides" class="rides" aria-label="할 수 있는 일">
-    <h2 data-jitter>기능</h2>
-    <svg class="doodle d-swirl-a" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 30 C30 26 36 26 36 31 C36 37 26 38 24 31 C21 22 34 17 40 25 C47 34 38 46 28 44" fill="none" stroke="#5b4031" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)"/></svg><svg class="doodle d-spark-a" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 8 V22 M30 38 V52 M8 30 H22 M38 30 H52 M16 16 L22 22 M38 38 L44 44 M44 16 L38 22 M22 38 L16 44" fill="none" stroke="#5b4031" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)"/></svg><svg class="doodle d-star-b" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 6 L36 22 L53 23 L40 34 L44 51 L30 41 L16 51 L20 34 L7 23 L24 22Z" fill="#bfe3d0" stroke="#5b4031" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)"/></svg>
-    <div class="tickets">
-      <article class="ticket t-pink"><img src="/assets/cast/hachiware-sing.webp" alt=""><div><h3>AI 대화</h3><p>GPT, Claude, Gemini를 연결해 캐릭터와 대화해요.</p></div></article>
-      <article class="ticket t-yellow"><img src="/assets/cast/momonga-plead.webp" alt=""><div><h3>메신저 알림</h3><p>카카오톡, 디스코드, 인스타 DM이 오면 알려 줘요. 누르면 그 대화방이 열려요.</p></div></article>
-      <article class="ticket t-mint"><img src="/assets/cast/kurimanju-kyaa.webp" alt=""><div><h3>급식 보기</h3><p>캐릭터 입을 누르면 지금 시간의 급식 메뉴가 나와요.</p></div></article>
-      <article class="ticket t-sky"><img src="/assets/cast/usagi-happy.webp" alt=""><div><h3>얼굴 누르기</h3><p>눈을 누르면 카메라 거울, 귀를 누르면 재생 중인 노래가 떠요.</p></div></article>
-      <article class="ticket t-pink"><img src="/assets/cast/rakko-confident.webp" alt=""><div><h3>작업 기억</h3><p>하던 작업을 저장해 두고 다음 대화에서 이어서 도와줘요.</p></div></article>
-      <article class="ticket t-yellow"><img src="/assets/cast/shisa-positive.webp" alt=""><div><h3>캐릭터 빼꼼</h3><p>설정 창 가장자리에 캐릭터가 가끔 나타나요. 설정에서 끌 수 있어요.</p></div></article>
+  <section id="features" class="features" aria-labelledby="features-title">
+    <h2 id="features-title" class="section-title">Features</h2>
+    <div class="desk">
+      <div class="stage f-chat">
+        <img class="pal peek-right" src="/assets/cast/hachiware-sing.webp" alt="" style="--w: 120px">
+        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Chat</span></div>
+          <div class="window-body"><h3>AI 대화</h3><p>GPT, Claude, Gemini를 연결해 캐릭터와 대화해요.</p></div></article>
+      </div>
+      <div class="stage f-alert">
+        <img class="pal sit" src="/assets/cast/momonga-plead.webp" alt="" style="--x: 60%; --w: 110px">
+        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Notifications</span></div>
+          <div class="window-body"><h3>메신저 알림</h3><p>카카오톡, 디스코드, 인스타 DM이 오면 알려 줘요. 누르면 그 대화방이 열려요.</p></div></article>
+      </div>
+      <div class="stage f-meal">
+        <img class="pal lean-left" src="/assets/cast/kurimanju-savor.webp" alt="" style="--w: 116px">
+        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Meals</span></div>
+          <div class="window-body"><h3>급식 보기</h3><p>캐릭터 입을 누르면 지금 시간의 급식 메뉴가 나와요.</p></div></article>
+      </div>
+      <div class="stage f-face">
+        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Face</span></div>
+          <div class="window-body"><h3>얼굴 누르기</h3><p>눈은 카메라 거울, 귀는 지금 재생 중인 노래.</p></div></article>
+      </div>
+      <div class="stage f-memory">
+        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Memory</span></div>
+          <div class="window-body"><h3>작업 기억</h3><p>하던 작업을 저장해 두고 다음 대화에서 이어서 도와줘요.</p></div></article>
+      </div>
+      <div class="stage f-peek">
+        <img class="pal peek-top" src="/assets/cast/shisa-positive.webp" alt="" style="--x: 64%; --w: 104px">
+        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Peek</span></div>
+          <div class="window-body"><h3>캐릭터 빼꼼</h3><p>설정 창 가장자리에 캐릭터가 가끔 나타나요. 설정에서 끌 수 있어요.</p></div></article>
+      </div>
     </div>
   </section>
 
-  <section id="booth" class="booth">
-    <div class="balloons" aria-hidden="true">
-      <span class="balloon b1"><img src="/assets/cast/chiikawa-joy.webp" alt=""></span>
-      <span class="balloon b2"><img src="/assets/cast/kani-positive.webp" alt=""></span>
-      <span class="balloon b3"><img src="/assets/cast/hachiware-sing.webp" alt=""></span>
+  <section id="download" class="download" aria-labelledby="download-title">
+    <div class="stage">
+      <img class="pal lean-right" src="/assets/cast/chiikawa-joy.webp" alt="" style="--w: 130px">
+      <div class="window wide">
+        <div class="titlebar"><i></i><i></i><i></i><span>Download</span></div>
+        <div class="window-body download-body">
+          <div>
+            <h2 id="download-title">Jjappi for Mac</h2>
+            <p class="version" data-version>Apple Silicon 맥 · macOS 14 이상</p>
+            <a class="button" href="#download" data-download>다운로드 (.zip)</a>
+          </div>
+          <ol class="steps">
+            <li>zip 파일을 더블클릭해 압축을 풀어요.</li>
+            <li>짜삐.app을 응용 프로그램 폴더로 옮겨요.</li>
+            <li>처음 열 때 경고가 뜨면 시스템 설정 › 개인정보 보호 및 보안에서 ‘그래도 열기’를 눌러요.</li>
+          </ol>
+        </div>
+      </div>
     </div>
-    <div class="admission">
-      <span class="admission-label">다운로드</span>
-      <h2 data-jitter>맥용 짜삐</h2>
-      <a class="button button-big" href="#booth" data-download data-confetti>다운로드 (.zip)</a>
-      <p class="version" data-version>Apple Silicon 맥 · macOS 14 이상</p>
-    </div>
-    <ol class="steps">
-      <li>zip 파일을 더블클릭해 압축을 풀어요.</li>
-      <li>짜삐.app을 응용 프로그램 폴더로 옮겨요.</li>
-      <li>처음 열 때 경고가 뜨면 시스템 설정 › 개인정보 보호 및 보안에서 ‘그래도 열기’를 눌러요.</li>
-    </ol>
   </section>
 
-  <section class="faq" aria-label="자주 묻는 질문">
-    <svg class="doodle d-heart-b" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 50 C10 36 6 24 14 16 C21 10 28 14 30 20 C32 14 39 10 46 16 C54 24 50 36 30 50Z" fill="#bcd9f2" stroke="#5b4031" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)"/></svg><svg class="doodle d-spark-b" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 8 V22 M30 38 V52 M8 30 H22 M38 30 H52 M16 16 L22 22 M38 38 L44 44 M44 16 L38 22 M22 38 L16 44" fill="none" stroke="#5b4031" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#wobble)"/></svg>
-    <details><summary>정말 무료예요?</summary><p>네. 광고도 결제도 없는 비영리 팬 프로젝트예요.</p></details>
-    <details><summary>내 대화는 어디로 가요?</summary><p>기록과 설정은 이 맥에만 저장돼요. 대화는 직접 연결한 AI 서비스로만 가요.</p></details>
-    <details><summary>업데이트는 어떻게 해요?</summary><p>다운로드 버튼은 항상 최신 버전이에요. 새로 받아 기존 앱을 바꾸면 설정은 그대로 남아요.</p></details>
+  <section class="faq" aria-labelledby="faq-title">
+    <div class="stage">
+      <img class="pal peek-right" src="/assets/cast/kani-positive.webp" alt="" style="--w: 104px">
+      <div class="window">
+        <div class="titlebar"><i></i><i></i><i></i><span id="faq-title">FAQ</span></div>
+        <div class="window-body">
+          <details><summary>정말 무료예요?</summary><p>네. 광고도 결제도 없는 비영리 팬 프로젝트예요.</p></details>
+          <details><summary>내 대화는 어디로 가요?</summary><p>기록과 설정은 이 맥에만 저장돼요. 대화는 직접 연결한 AI 서비스로만 가요.</p></details>
+          <details><summary>업데이트는 어떻게 해요?</summary><p>다운로드 버튼은 항상 최신 버전이에요. 새로 받아 기존 앱을 바꾸면 설정은 그대로 남아요.</p></details>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 
 <footer class="footer">
-  <img src="/assets/cast/kurimanju-savor.webp" alt="" class="footer-pal">
-  <p>짜삐는 개인이 만든 비영리 팬 프로젝트로, 원작자·제작사와 관련이 없어요. 치이카와(먼작귀) 캐릭터의 권리는 나가노와 각 권리자에게 있어요. 타이틀 영상은 東宝MOVIEチャンネル의 <a href="https://www.youtube.com/watch?v=Tz7hdJ5wsyY" target="_blank" rel="noopener">『映画ちいかわ 人魚の島のひみつ』 오프닝</a>을 유튜브로 보여 줘요.</p>
+  <p>Jjappi는 개인이 만든 비영리 팬 프로젝트로, 원작자·제작사와 관련이 없어요. 치이카와(먼작귀) 캐릭터의 권리는 나가노와 각 권리자에게 있어요. 타이틀 영상은 東宝MOVIEチャンネル의 <a href="https://www.youtube.com/watch?v=Tz7hdJ5wsyY" target="_blank" rel="noopener">『映画ちいかわ 人魚の島のひみつ』 오프닝</a>을 유튜브로 보여 줘요.</p>
   <a data-repo href="https://github.com/hyj090915/Jjappi" target="_blank" rel="noopener">GitHub</a>
 </footer>
 </body>
