@@ -59,6 +59,9 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .pal.sit { z-index: 2; left: var(--x, 40px); bottom: calc(100% - 26px); }
 .pal.peek-top { z-index: 0; left: var(--x, 60%); bottom: calc(100% - 44px); }
 .pal.peek-right { z-index: 0; right: calc(var(--w) * -0.48); top: 18px; rotate: 14deg; }
+/* Head only, peeking round the box's top-right corner: the head leans out
+   and the cut below it stays behind the box, so no arms or legs show. */
+.pal.peek-corner { z-index: 0; right: calc(var(--in, 6px) - var(--w) / 2); top: calc(var(--in, 6px) - var(--w) / 2); rotate: 35deg; clip-path: polygon(0 0, 100% 0, 100% 48%, 97% 64%, 90% 78%, 77% 89%, 61% 95%, 50% 97%, 0 100%); }
 .pal.lean-left { z-index: 2; left: calc(var(--w) * -0.86); bottom: -2px; rotate: -8deg; transform-origin: 90% 100%; }
 .pal.lean-right { z-index: 2; right: calc(var(--w) * -0.82); bottom: -2px; rotate: 8deg; transform-origin: 10% 100%; }
 
