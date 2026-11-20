@@ -16,9 +16,19 @@
 <script src="/main.js" defer></script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="bush"><path d="M8 92 C-4 70 14 48 34 54 C34 26 70 18 84 42 C96 18 138 22 140 52 C164 44 182 70 170 92Z" fill="#d6ecc4" stroke="#8db27a" stroke-width="2.4" stroke-linejoin="round"/>
+      <circle cx="52" cy="62" r="5" fill="#cbb8ea" stroke="#8a78b8" stroke-width="1.4"/><circle cx="104" cy="50" r="4.5" fill="#f7de8f" stroke="#c4a54e" stroke-width="1.4"/><circle cx="136" cy="72" r="4.5" fill="#f5bccb" stroke="#c98a9c" stroke-width="1.4"/></g>
+    <g id="tree"><path d="M88 300 C92 240 86 200 92 150 L112 150 C116 200 110 240 116 300Z" fill="#e2c3a1" stroke="#a9825f" stroke-width="2.4"/>
+      <path d="M20 150 C-6 120 16 70 52 76 C50 34 102 10 128 44 C160 20 210 50 196 92 C222 110 206 160 170 158 C150 182 110 176 100 160 C80 180 34 176 20 150Z" fill="#cfe7bb" stroke="#8db27a" stroke-width="2.4" stroke-linejoin="round"/>
+      <circle cx="70" cy="110" r="6" fill="#cbb8ea" stroke="#8a78b8" stroke-width="1.4"/><circle cx="140" cy="80" r="5" fill="#f7de8f" stroke="#c4a54e" stroke-width="1.4"/><circle cx="160" cy="130" r="5" fill="#f5bccb" stroke="#c98a9c" stroke-width="1.4"/></g>
+  </defs>
+</svg>
+
 <header class="topbar">
   <a class="logo" href="#top">Jjappi</a>
-  <nav aria-label="페이지 이동"><a href="#features">Features</a><a href="#download">Download</a></nav>
+  <nav aria-label="페이지 이동"><a href="#about">About</a><a href="#features">Features</a><a href="#download">Download</a><a href="#faq">FAQ</a></nav>
 </header>
 
 <main id="top">
@@ -37,90 +47,91 @@
     <button type="button" class="sound" id="sound-toggle" aria-pressed="false">소리 켜기</button>
   </section>
 
-  <section class="about">
+  <section id="about" class="block about">
+    <svg class="scenery tree-left" viewBox="0 0 220 300" aria-hidden="true"><use href="#tree"/></svg>
+    <h2 class="label">About</h2>
     <div class="stage">
-      <img class="pal sit" src="/assets/cast/usagi-neutral.webp" alt="" style="--x: 40px; --w: 120px"><span class="paw" style="--paw:#fbecbd; left: 66px; top: -7px" aria-hidden="true"></span><span class="paw" style="--paw:#fbecbd; left: 118px; top: -7px" aria-hidden="true"></span>
-      <div class="window wide">
-        <div class="titlebar"><i></i><i></i><i></i><span>About</span></div>
-        <div class="window-body">
-          <h2>바탕화면에서 같이 지내는<br>작은 도우미</h2>
-          <p>캐릭터를 누르면 AI와 대화하고, 카카오톡·디스코드·인스타 알림과 오늘 급식을 알려 줘요. 무료이고, 기록은 이 맥에만 저장돼요.</p>
-        </div>
+      <img class="pal sit" src="/assets/cast/usagi-neutral.webp" alt="" style="--x: 48px; --w: 112px">
+      <span class="paw" style="--paw:#fbeec4; left: 70px; top: -6px" aria-hidden="true"></span><span class="paw" style="--paw:#fbeec4; left: 122px; top: -6px" aria-hidden="true"></span>
+      <div class="box">
+        <h3>바탕화면에서 같이 지내는 작은 도우미</h3>
+        <p>캐릭터를 누르면 AI와 대화하고, 카카오톡·디스코드·인스타 알림과 오늘 급식을 알려 줘요. 무료이고, 기록은 이 맥에만 저장돼요.</p>
       </div>
     </div>
   </section>
 
-  <section id="features" class="features" aria-labelledby="features-title">
-    <h2 id="features-title" class="section-title">Features</h2>
-    <div class="desk">
-      <div class="stage f-chat">
-        <img class="pal peek-right" src="/assets/cast/hachiware-sing.webp" alt="" style="--w: 120px"><span class="paw" style="--paw:#f7f2f0; right: -9px; top: calc(26% + 44px); rotate: 80deg" aria-hidden="true"></span>
-        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Chat</span></div>
-          <div class="window-body"><h3>AI 대화</h3><p>GPT, Claude, Gemini를 연결해 캐릭터와 대화해요.</p></div></article>
+  <section id="features" class="block features">
+    <svg class="scenery bush-right" viewBox="0 0 180 100" aria-hidden="true"><use href="#bush"/></svg>
+    <h2 class="label">Features</h2>
+    <div class="grid">
+      <div class="stage">
+        <img class="pal peek-right" src="/assets/cast/hachiware-sing.webp" alt="" style="--w: 112px">
+        <span class="paw" style="--paw:#fffdf9; right: -8px; top: 64px; rotate: 80deg" aria-hidden="true"></span>
+        <article class="box"><span class="tag">Chat</span><h3>AI 대화</h3><p>GPT, Claude, Gemini를 연결해 캐릭터와 대화해요.</p></article>
       </div>
-      <div class="stage f-alert">
-        <img class="pal sit" src="/assets/cast/momonga-plead.webp" alt="" style="--x: 60%; --w: 110px"><span class="paw" style="--paw:#f6f3f1; left: calc(60% + 26px); top: -7px" aria-hidden="true"></span><span class="paw" style="--paw:#f6f3f1; left: calc(60% + 70px); top: -7px" aria-hidden="true"></span>
-        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Notifications</span></div>
-          <div class="window-body"><h3>메신저 알림</h3><p>카카오톡, 디스코드, 인스타 DM이 오면 알려 줘요. 누르면 그 대화방이 열려요.</p></div></article>
+      <div class="stage">
+        <img class="pal sit" src="/assets/cast/momonga-plead.webp" alt="" style="--x: 58%; --w: 104px">
+        <span class="paw" style="--paw:#fffdf9; left: calc(58% + 24px); top: -6px" aria-hidden="true"></span><span class="paw" style="--paw:#fffdf9; left: calc(58% + 64px); top: -6px" aria-hidden="true"></span>
+        <article class="box"><span class="tag">Notifications</span><h3>메신저 알림</h3><p>카카오톡, 디스코드, 인스타 DM이 오면 알려 줘요. 누르면 그 대화방이 열려요.</p></article>
       </div>
-      <div class="stage f-meal">
-        <img class="pal lean-left" src="/assets/cast/kurimanju-savor.webp" alt="" style="--w: 116px"><span class="paw" style="--paw:#f8e4c6; left: -9px; top: 52%; rotate: -80deg" aria-hidden="true"></span>
-        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Meals</span></div>
-          <div class="window-body"><h3>급식 보기</h3><p>캐릭터 입을 누르면 지금 시간의 급식 메뉴가 나와요.</p></div></article>
+      <div class="stage">
+        <img class="pal lean-left" src="/assets/cast/kurimanju-savor.webp" alt="" style="--w: 108px">
+        <span class="paw" style="--paw:#f9e6cc; left: -8px; top: 52%; rotate: -80deg" aria-hidden="true"></span>
+        <article class="box"><span class="tag">Meals</span><h3>급식 보기</h3><p>캐릭터 입을 누르면 지금 시간의 급식 메뉴가 나와요.</p></article>
       </div>
-      <div class="stage f-face">
-        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Face</span></div>
-          <div class="window-body"><h3>얼굴 누르기</h3><p>눈은 카메라 거울, 귀는 지금 재생 중인 노래.</p></div></article>
+      <div class="stage">
+        <article class="box"><span class="tag">Face</span><h3>얼굴 누르기</h3><p>눈은 카메라 거울, 귀는 지금 재생 중인 노래.</p></article>
       </div>
-      <div class="stage f-memory">
-        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Memory</span></div>
-          <div class="window-body"><h3>작업 기억</h3><p>하던 작업을 저장해 두고 다음 대화에서 이어서 도와줘요.</p></div></article>
+      <div class="stage">
+        <article class="box"><span class="tag">Memory</span><h3>작업 기억</h3><p>하던 작업을 저장해 두고 다음 대화에서 이어서 도와줘요.</p></article>
       </div>
-      <div class="stage f-peek">
-        <img class="pal peek-top" src="/assets/cast/shisa-positive.webp" alt="" style="--x: 64%; --w: 104px"><span class="paw" style="--paw:#fbe6c2; left: calc(64% + 22px); top: -7px" aria-hidden="true"></span><span class="paw" style="--paw:#fbe6c2; left: calc(64% + 64px); top: -7px" aria-hidden="true"></span>
-        <article class="window"><div class="titlebar"><i></i><i></i><i></i><span>Peek</span></div>
-          <div class="window-body"><h3>캐릭터 빼꼼</h3><p>설정 창 가장자리에 캐릭터가 가끔 나타나요. 설정에서 끌 수 있어요.</p></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="download" class="download" aria-labelledby="download-title">
-    <div class="stage">
-      <img class="pal lean-right" src="/assets/cast/chiikawa-joy.webp" alt="" style="--w: 130px"><span class="paw" style="--paw:#f6f1ef; right: -9px; top: 46%; rotate: 80deg" aria-hidden="true"></span>
-      <div class="window wide">
-        <div class="titlebar"><i></i><i></i><i></i><span>Download</span></div>
-        <div class="window-body download-body">
-          <div>
-            <h2 id="download-title">Jjappi for Mac</h2>
-            <p class="version" data-version>Apple Silicon 맥 · macOS 14 이상</p>
-            <a class="button" href="#download" data-download>다운로드 (.zip)</a>
-          </div>
-          <ol class="steps">
-            <li>zip 파일을 더블클릭해 압축을 풀어요.</li>
-            <li>짜삐.app을 응용 프로그램 폴더로 옮겨요.</li>
-            <li>처음 열 때 경고가 뜨면 시스템 설정 › 개인정보 보호 및 보안에서 ‘그래도 열기’를 눌러요.</li>
-          </ol>
-        </div>
+      <div class="stage">
+        <img class="pal peek-top" src="/assets/cast/shisa-positive.webp" alt="" style="--x: 62%; --w: 100px">
+        <span class="paw" style="--paw:#fbeacf; left: calc(62% + 20px); top: -6px" aria-hidden="true"></span><span class="paw" style="--paw:#fbeacf; left: calc(62% + 60px); top: -6px" aria-hidden="true"></span>
+        <article class="box"><span class="tag">Peek</span><h3>캐릭터 빼꼼</h3><p>설정 창 가장자리에 캐릭터가 가끔 나타나요. 설정에서 끌 수 있어요.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="faq" aria-labelledby="faq-title">
+  <section id="download" class="block download">
+    <svg class="scenery bush-left" viewBox="0 0 180 100" aria-hidden="true"><use href="#bush"/></svg>
+    <h2 class="label">Download</h2>
     <div class="stage">
-      <img class="pal peek-right" src="/assets/cast/kani-positive.webp" alt="" style="--w: 104px"><span class="paw" style="--paw:#f7d9d9; right: -9px; top: calc(26% + 40px); rotate: 80deg" aria-hidden="true"></span>
-      <div class="window">
-        <div class="titlebar"><i></i><i></i><i></i><span id="faq-title">FAQ</span></div>
-        <div class="window-body">
-          <details><summary>정말 무료예요?</summary><p>네. 광고도 결제도 없는 비영리 팬 프로젝트예요.</p></details>
-          <details><summary>내 대화는 어디로 가요?</summary><p>기록과 설정은 이 맥에만 저장돼요. 대화는 직접 연결한 AI 서비스로만 가요.</p></details>
-          <details><summary>업데이트는 어떻게 해요?</summary><p>다운로드 버튼은 항상 최신 버전이에요. 새로 받아 기존 앱을 바꾸면 설정은 그대로 남아요.</p></details>
+      <img class="pal lean-right" src="/assets/cast/chiikawa-joy.webp" alt="" style="--w: 120px">
+      <span class="paw" style="--paw:#fffdf9; right: -8px; top: 46%; rotate: 80deg" aria-hidden="true"></span>
+      <div class="box download-box">
+        <div>
+          <h3 class="download-title">Jjappi for Mac</h3>
+          <p class="version" data-version>Apple Silicon 맥 · macOS 14 이상</p>
+          <a class="button" href="#download" data-download>다운로드 (.zip)</a>
         </div>
+        <ol class="steps">
+          <li>zip 파일을 더블클릭해 압축을 풀어요.</li>
+          <li>짜삐.app을 응용 프로그램 폴더로 옮겨요.</li>
+          <li>처음 열 때 경고가 뜨면 시스템 설정 › 개인정보 보호 및 보안에서 ‘그래도 열기’를 눌러요.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="block faq">
+    <h2 class="label">FAQ</h2>
+    <div class="stage">
+      <img class="pal peek-right" src="/assets/cast/kani-positive.webp" alt="" style="--w: 98px">
+      <span class="paw" style="--paw:#f8dede; right: -8px; top: 60px; rotate: 80deg" aria-hidden="true"></span>
+      <div class="box">
+        <details><summary>정말 무료예요?</summary><p>네. 광고도 결제도 없는 비영리 팬 프로젝트예요.</p></details>
+        <details><summary>내 대화는 어디로 가요?</summary><p>기록과 설정은 이 맥에만 저장돼요. 대화는 직접 연결한 AI 서비스로만 가요.</p></details>
+        <details><summary>업데이트는 어떻게 해요?</summary><p>다운로드 버튼은 항상 최신 버전이에요. 새로 받아 기존 앱을 바꾸면 설정은 그대로 남아요.</p></details>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
+  <div class="meadow" aria-hidden="true">
+    <svg viewBox="0 0 180 100"><use href="#bush"/></svg><svg viewBox="0 0 180 100"><use href="#bush"/></svg><svg viewBox="0 0 180 100"><use href="#bush"/></svg>
+  </div>
   <p>Jjappi는 개인이 만든 비영리 팬 프로젝트로, 원작자·제작사와 관련이 없어요. 치이카와(먼작귀) 캐릭터의 권리는 나가노와 각 권리자에게 있어요. 타이틀 영상은 東宝MOVIEチャンネル의 <a href="https://www.youtube.com/watch?v=Tz7hdJ5wsyY" target="_blank" rel="noopener">『映画ちいかわ 人魚の島のひみつ』 오프닝</a>을 유튜브로 보여 줘요.</p>
   <a data-repo href="https://github.com/hyj090915/Jjappi" target="_blank" rel="noopener">GitHub</a>
 </footer>
