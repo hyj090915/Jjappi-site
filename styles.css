@@ -119,3 +119,8 @@ h3 { font-size: 21px; font-weight: 700; line-height: 1.4; }
   html { scroll-behavior: auto; }
   .pal, .button { transition: none; }
 }
+
+/* A little paw drawn in the character's colour, holding the window edge. */
+.paw { position: absolute; z-index: 3; width: 22px; height: 15px; background: var(--paw); border: 2px solid #4a3426; border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%; transition: transform 260ms var(--ease); }
+.stage:hover .paw { transform: translateY(-2px); }
+@media (max-width: 860px) { .paw { width: 18px; height: 12px; } }
