@@ -74,3 +74,21 @@ dialog.addEventListener('close', () => {
   dialog.querySelector('.photo-scroll').scrollTo(0, 0);
   opener?.focus({preventScroll: true});
 });
+
+// Some touch browsers defer link :active until the tap is almost over.
+const petMap = document.querySelector('.pet-map');
+let pressedPart;
+function releasePart() {
+  pressedPart?.removeAttribute('data-pressed');
+  pressedPart = undefined;
+}
+petMap.addEventListener('pointerdown', event => {
+  if (!event.isPrimary || event.pointerType === 'mouse') return;
+  releasePart();
+  pressedPart = event.target.closest('a');
+  pressedPart?.setAttribute('data-pressed', '');
+});
+for (const type of ['pointerup', 'pointercancel']) {
+  window.addEventListener(type, event => { if (event.isPrimary) releasePart(); }, {passive: true});
+}
+window.addEventListener('blur', releasePart);

@@ -33,6 +33,9 @@
 .pose-happy { opacity: var(--happy, 0); background-position-x: 100%; }
 
 .pet-map a { font-family: var(--display-ko); font-size: 16px; font-weight: 400; }
+.pet-map .map-ear::after { width: 20cqw; transform: rotate(-26deg); }
+.pet-map .map-eye::after { width: 19cqw; transform: rotate(-11deg); }
+.pet-map .map-face::after { width: 17cqw; transform: rotate(14deg); transform-origin: right center; }
 /* Each tag also owns the hit area on the corresponding part of the portrait. */
 .pet-map a::before {
   content: '';
@@ -65,7 +68,7 @@
   height: calc(var(--pet-height) * .25);
 }
 .pet-map a:focus-visible::before { outline: 2px solid var(--berry); outline-offset: 2px; }
-.pet-map a:active { background: #f9dce1; border-color: var(--berry); }
+.pet-map a:is(:active, [data-pressed]) { background: #f9dce1; border-color: var(--berry); }
 
 @media (hover: hover) and (pointer: fine) {
   .pet-map:not(:has(:focus-visible)):has(a:hover) { --rest: 0; }
@@ -73,10 +76,10 @@
   .pet-map:has(.map-eye:hover) { --eye: 1; }
   .pet-map:has(:is(.map-face, .map-body):hover) { --happy: 1; }
 }
-.pet-map:has(a:active) { --rest: 0; }
-.pet-map:has(.map-ear:active) { --ear: 1; }
-.pet-map:has(.map-eye:active) { --eye: 1; }
-.pet-map:has(:is(.map-face, .map-body):active) { --happy: 1; }
+.pet-map:has(a:is(:active, [data-pressed])) { --rest: 0; }
+.pet-map:has(.map-ear:is(:active, [data-pressed])) { --ear: 1; }
+.pet-map:has(.map-eye:is(:active, [data-pressed])) { --eye: 1; }
+.pet-map:has(:is(.map-face, .map-body):is(:active, [data-pressed])) { --happy: 1; }
 .pet-map:has(a:focus-visible) .pet-portrait {
   --rest: 1; --ear: 0; --eye: 0; --happy: 0;
   transform: none;
