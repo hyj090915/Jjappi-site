@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Jjappi Jua';
+  src: url('/assets/fonts/jua.woff2') format('woff2');
+  font-style: normal; font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Gowun Dodum';
+  src: url('/assets/fonts/gowun-dodum.woff2') format('woff2');
+  font-style: normal; font-weight: 400; font-display: swap;
+}
 :root {
   --paper: #fffefb;
   --box: #ffffff;
@@ -116,4 +126,16 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .button { transition: none; }
+}
+
+.topbar .home-guide-nav, .download-guide { color: #93405a; font-family: 'Gowun Dodum', sans-serif; font-weight: 700; }
+.download-guide { display: block; width: fit-content; margin-top: 16px; font-size: 16px; text-underline-offset: 4px; }
+@media(max-width:760px) {
+  .topbar nav:has(.home-guide-nav) { display: flex; }
+  .topbar nav:has(.home-guide-nav) a:not(.home-guide-nav) { display: none; }
+}
+
+#download .download-guide, .hero .button, .download-box .button, .block .box h3:not(.download-title) {
+  font-family: 'Jjappi Jua', 'Gowun Dodum', sans-serif;
+  font-weight: 400;
 }

@@ -1,0 +1,96 @@
+.pet-map {
+  container-type: size;
+  --pet-height: 265px;
+  --pet-top: 2px;
+}
+
+.pet-portrait {
+  position: absolute;
+  left: 50%;
+  top: var(--pet-top);
+  height: var(--pet-height);
+  aspect-ratio: 445 / 707;
+  translate: -50% 0;
+  isolation: isolate;
+  pointer-events: none;
+  transform-origin: 50% 94%;
+}
+
+.pet-portrait img, .pet-pose {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  mix-blend-mode: plus-lighter;
+}
+.pet-portrait img { opacity: var(--rest, 1); }
+.pet-pose {
+  background: url('/assets/guide/pet-reactions.webp') 0 0 / 300% 100% no-repeat;
+}
+.pose-ear { opacity: var(--ear, 0); }
+.pose-eye { opacity: var(--eye, 0); background-position-x: 50%; }
+.pose-happy { opacity: var(--happy, 0); background-position-x: 100%; }
+
+.pet-map a { font-family: var(--display-ko); font-size: 16px; font-weight: 400; }
+/* Each tag also owns the hit area on the corresponding part of the portrait. */
+.pet-map a::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.pet-map .map-ear::before {
+  left: calc(43cqw - var(--pet-height) * .116 - 1px);
+  top: calc(var(--pet-top) + var(--pet-height) * .016 - 19cqh - 1px);
+  width: calc(var(--pet-height) * .244);
+  height: calc(var(--pet-height) * .25);
+}
+.pet-map .map-eye::before {
+  left: calc(49cqw - var(--pet-height) * .104 - 1px);
+  top: calc(var(--pet-top) + var(--pet-height) * .411 - 43cqh - 1px);
+  width: calc(var(--pet-height) * .29);
+  height: calc(var(--pet-height) * .085);
+}
+.pet-map .map-face::before {
+  right: calc(49cqw - var(--pet-height) * .127 - 1px);
+  top: calc(var(--pet-top) + var(--pet-height) * .496 - 52cqh - 1px);
+  width: calc(var(--pet-height) * .17);
+  height: calc(var(--pet-height) * .128);
+}
+.pet-map .map-body::before {
+  left: calc(47cqw - var(--pet-height) * .15 - 1px);
+  bottom: calc(85cqh - var(--pet-top) - var(--pet-height) * .96 - 1px);
+  width: calc(var(--pet-height) * .312);
+  height: calc(var(--pet-height) * .25);
+}
+.pet-map a:focus-visible::before { outline: 2px solid var(--berry); outline-offset: 2px; }
+.pet-map a:active { background: #f9dce1; border-color: var(--berry); }
+
+@media (hover: hover) and (pointer: fine) {
+  .pet-map:not(:has(:focus-visible)):has(a:hover) { --rest: 0; }
+  .pet-map:has(.map-ear:hover) { --ear: 1; }
+  .pet-map:has(.map-eye:hover) { --eye: 1; }
+  .pet-map:has(:is(.map-face, .map-body):hover) { --happy: 1; }
+}
+.pet-map:has(a:active) { --rest: 0; }
+.pet-map:has(.map-ear:active) { --ear: 1; }
+.pet-map:has(.map-eye:active) { --eye: 1; }
+.pet-map:has(:is(.map-face, .map-body):active) { --happy: 1; }
+.pet-map:has(a:focus-visible) .pet-portrait {
+  --rest: 1; --ear: 0; --eye: 0; --happy: 0;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pet-portrait { transition: transform 180ms var(--ease); }
+  .pet-portrait img, .pet-pose { transition: opacity 160ms ease; }
+  @media (hover: hover) and (pointer: fine) {
+    .pet-map:not(:has(:focus-visible)):has(.map-body:hover) .pet-portrait { transform: translateY(-3px) rotate(-1.5deg); }
+  }
+  .pet-map:has(a:focus-visible) :is(.pet-portrait, .pet-portrait img, .pet-pose) { transition: none; }
+}
+@media (max-width: 760px) {
+  .pet-map { --pet-height: 192px; --pet-top: 0px; }
+  .pet-map a { font-size: 14px; }
+}

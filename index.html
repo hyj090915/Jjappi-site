@@ -11,7 +11,7 @@
 <link rel="icon" href="/assets/faces/usagi.webp?v=20261120">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <script src="/main.js" defer></script>
 </head>
@@ -28,7 +28,7 @@
 
 <header class="topbar">
   <a class="logo" href="#top">Jjappi</a>
-  <nav aria-label="페이지 이동"><a href="#about">About</a><a href="#features">Features</a><a href="#download">Download</a><a href="#faq">FAQ</a></nav>
+  <nav aria-label="페이지 이동"><a href="#about">About</a><a href="#features">Features</a><a class="home-guide-nav" href="/guide">사용 가이드</a><a href="#download">Download</a><a href="#faq">FAQ</a></nav>
 </header>
 
 <main id="top">
@@ -42,7 +42,7 @@
     <div class="hero-copy">
       <h1>Jjappi</h1>
       <p>맥 바탕화면에 사는 캐릭터 도우미</p>
-      <a class="button" href="#download" data-download>무료 다운로드</a>
+      <a class="button" href="https://github.com/hyj090915/Jjappi/releases/latest/download/Jjappi-mac.zip" data-download>무료 다운로드</a>
     </div>
     <button type="button" class="sound" id="sound-toggle" aria-pressed="false">소리 켜기</button>
   </section>
@@ -69,7 +69,7 @@
       </div>
       <div class="stage">
         <img class="pal sit" src="/assets/cast/momonga-plead.webp?v=20261120" alt="" style="--x: 58%; --w: 104px">
-        <article class="box"><span class="tag">Notifications</span><h3>메신저 알림</h3><p>카카오톡, 디스코드, 인스타 DM이 오면 알려 줘요. 누르면 그 대화방이 열려요.</p></article>
+        <article class="box"><span class="tag">Notifications</span><h3>메신저 알림</h3><p>카카오톡, 디스코드, 인스타 DM이 오면 알려 줘요. 알림을 눌러 메신저에서 확인해요.</p></article>
       </div>
       <div class="stage">
         <img class="pal lean-left" src="/assets/cast/kurimanju-savor.webp?v=20261120" alt="" style="--w: 108px">
@@ -97,7 +97,8 @@
         <div>
           <h3 class="download-title">Jjappi for Mac</h3>
           <p class="version" data-version>Apple Silicon 맥 · macOS 14 이상</p>
-          <a class="button" href="#download" data-download>다운로드 (.zip)</a>
+          <a class="button" href="https://github.com/hyj090915/Jjappi/releases/latest/download/Jjappi-mac.zip" data-download>다운로드 (.zip)</a>
+          <a class="download-guide" href="/guide#install">설치부터 따라 하는 사용 가이드</a>
         </div>
         <ol class="steps">
           <li>zip 파일을 더블클릭해 압축을 풀어요.</li>

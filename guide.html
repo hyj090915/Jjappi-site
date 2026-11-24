@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>짜삐 사용 가이드 · Jjappi</title>
+  <meta name="description" content="실제 앱 화면으로 따라 하는 짜삐 사용법. 캐릭터 조작, AI 채팅과 작업, 메신저 알림, 급식, 음악과 거울까지.">
+  <meta property="og:title" content="짜삐 사용 가이드">
+  <meta property="og:description" content="캐릭터의 어디를 누를지부터 AI와 하던 일을 이어 가는 법까지, 화면을 보며 따라 해요.">
+  <link rel="icon" href="/assets/faces/usagi.webp?v=20261120">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/jua.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/guide.css">
+  <link rel="stylesheet" href="/guide-motion.css">
+  <script src="/guide.js" defer></script>
+</head>
+<body class="guide-page" id="top">
+<a class="skip" href="#chapters">본문으로 건너뛰기</a>
+<header class="topbar"><a class="logo" href="/" aria-label="짜삐 홈">Jjappi</a><nav aria-label="사이트 메뉴"><a href="/" class="home-link">홈</a><a href="/guide" aria-current="page">사용 가이드</a><a class="download-link" href="/#download">Mac 다운로드</a></nav></header>
+<main>
+  <div class="guide-cover">
+    <div class="cover-text">
+      <p class="edition"><span></span> Mac용 짜삐 · v0.2.1</p>
+      <h1>짜삐 사용 가이드</h1>
+      <p class="intro">우사기의 귀는 음악 버튼이고, 입은 오늘의 급식표예요. 우사기나 옆의 이름표를 눌러 궁금한 사용법으로 바로 가세요.</p>
+      <div class="cover-links"><a class="start-link" href="#install">처음 설치하기 <span aria-hidden="true">↓</span></a><a href="#notifications">알림 설정부터 보기</a></div>
+    </div>
+    <div class="pet-map" role="group" aria-label="캐릭터의 부위별 사용법">
+      <div class="pet-halo"></div>
+      <div class="pet-portrait">
+        <img src="/assets/guide/pet-home.webp" alt="바탕화면에 서 있는 우사기" width="445" height="707" fetchpriority="high">
+        <i class="pet-pose pose-ear" aria-hidden="true"></i><i class="pet-pose pose-eye" aria-hidden="true"></i><i class="pet-pose pose-happy" aria-hidden="true"></i>
+      </div>
+      <a class="map-ear" href="#music"><span>귀</span> 음악</a>
+      <a class="map-eye" href="#mirror"><span>눈</span> 거울</a>
+      <a class="map-face" href="#daily"><span>입</span> 급식</a>
+      <a class="map-body" href="#chat"><span>몸통</span> 대화</a>
+    </div>
+  </div>
+  <div class="guide-layout">
+    <aside class="side-index"><details class="contents" id="contents" open>
+      <summary>사용 가이드 목차 <span id="current-chapter" aria-hidden="true"></span></summary>
+      <nav aria-label="사용 가이드 목차">
+        <p>시작하기</p><a href="#install">설치와 업데이트</a><a href="#character">캐릭터 조작과 꾸미기</a>
+        <p>대화와 작업</p><a href="#chat">AI 연결과 채팅</a><a href="#tools">검색과 파일·컴퓨터 작업</a><a href="#memory">작업과 기억</a>
+        <p>바탕화면에서</p><a href="#notifications">메신저 알림과 방 관리</a><a href="#instagram">인스타그램 DM</a><a href="#daily">급식과 카메라 거울</a><a href="#music">음악과 재생 카드</a><a href="#shortcuts">웹·앱 바로가기</a>
+      </nav>
+    </details></aside>
+    <div class="chapters" id="chapters">
+      <section class="chapter" id="install">
+        <h2>설치와 업데이트</h2>
+        <p>Apple Silicon(M 시리즈) Mac에서 macOS 14 이상을 사용하고 있다면 시작할 수 있어요.</p>
+        <ol class="howto">
+          <li><div><a href="/#download"><strong>Mac 다운로드</strong></a>에서 <b>다운로드 (.zip)</b>을 누르세요.</div></li>
+          <li><div>다운로드한 <strong>Jjappi-mac.zip</strong>을 더블클릭하고, 안에 있는 <b>짜삐.app</b>을 응용 프로그램 폴더로 옮기세요.</div></li>
+          <li><div><strong>짜삐</strong>를 열면 바탕화면에 캐릭터가 나타나요. 몸통을 눌러 채팅을 고르거나, 캐릭터를 우클릭해 설정을 여세요.</div></li>
+        </ol>
+        <details class="more"><summary>Mac이 처음 열기를 차단해요</summary><p>v0.2.1은 Apple의 공증을 받지 않은 배포본이에요. 공식 다운로드에서 받은 파일인지 확인한 뒤 앱을 한 번 열어 보세요. macOS가 개발자를 확인할 수 없다고 하면 <b>시스템 설정 → 개인정보 보호 및 보안</b>에서 이 앱의 <b>그래도 열기</b>를 선택할 수 있어요.</p></details>
+        <details class="more"><summary>새 버전으로 업데이트하려면?</summary><p>v0.2.1에서는 짜삐를 종료하고 최신 ZIP을 받은 뒤, 사용하던 위치의 앱을 새 앱으로 교체하세요. 설정과 작업 기억은 Mac의 앱 데이터에 보관돼요. <a href="https://github.com/hyj090915/Jjappi/releases">버전별 변경 사항 보기</a></p></details>
+      </section>
+      <section class="chapter" id="character">
+        <h2>캐릭터 조작과 꾸미기</h2>
+        <p>캐릭터를 잡고 끌면 위치가 바뀌어요. 마우스를 올리면 나타나는 오른쪽 아래 손잡이를 끌어 크기를 조절하세요. 우클릭이나 <kbd>Control</kbd> + 클릭으로 설정창을 열 수 있어요.</p>
+        <dl class="pairs">
+          <dt>캐릭터와 이름</dt><dd><b>설정 → 일반 → 캐릭터</b>에서 원하는 친구를 고르세요. 이름을 입력하고 <b>저장</b>을 누르면 채팅에서도 그 이름을 사용해요. <b>표정과 움직임 미리보기</b>에서 표정을 눌러 볼 수 있어요.</dd>
+          <dt>크기와 움직임</dt><dd>크기는 <b>80~480px</b> 사이로 맞출 수 있어요. 다른 창 위에 표시할지, 모든 데스크톱에 보일지, 움직임을 줄일지도 같은 화면에서 정해요.</dd>
+          <dt>잠깐 접어 두기</dt><dd>아래의 <b>−</b>를 누르면 작은 버튼으로 접히고, 다시 누르면 펼쳐져요. 접힌 동안에도 켜 둔 알림은 도착해요. 숨긴 캐릭터는 Mac 메뉴 막대의 짜삐 메뉴에서 <b>캐릭터 다시 보이기</b>로 불러오세요.</dd>
+        </dl>
+        <figure class="shot shot-settings">
+          <a class="shot-link" href="/assets/guide/settings.webp" data-title="캐릭터의 표정과 별명 바꾸기" aria-label="캐릭터의 표정과 별명 바꾸기 크게 보기">
+            <img src="/assets/guide/settings.webp" width="1600" height="1216" loading="lazy" decoding="async" alt="설정의 캐릭터 선택, 표정 미리보기, 별명 입력란과 크기 슬라이더">
+          </a><figcaption>캐릭터의 표정과 별명 바꾸기<a class="shot-open" href="/assets/guide/settings.webp" data-title="캐릭터의 표정과 별명 바꾸기" aria-label="캐릭터의 표정과 별명 바꾸기 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure>
+        <details class="more"><summary>캐릭터 소리와 빼꼼을 바꾸려면?</summary><p>우사기는 머리 옆 스피커를 눌러 반응 소리를 켜거나 끌 수 있어요. 종은 메신저 알림을 조절해요. <b>설정 → 일반 → 가끔 빼꼼</b>을 켜면 설정창 가장자리에서 캐릭터가 잠시 고개를 내밀어요. 눌러서 바로 숨길 수도 있어요.</p></details>
+      </section>
+      <section class="chapter" id="chat">
+        <h2>AI 연결과 채팅</h2>
+        <p>먼저 대답할 AI를 연결하고, 채팅은 바탕화면에서 가볍게 시작하세요.</p>
+        <ol class="howto">
+          <li><div><b>설정 → 일반 → AI 연결</b>에서 제공자를 선택하세요. 구독으로 쓰려면 <strong>GPT · ChatGPT 구독</strong> 또는 <strong>Claude · 구독 계정</strong>을 고르고 해당 서비스의 로그인 안내를 따라가세요. Gemini는 API 키로 연결해요.</div></li>
+          <li><div>필요하면 모델과 추론 단계를 고른 뒤 <b>연결 설정 저장 → 연결 테스트</b>를 누르세요. 이 Mac에서 구동 중인 Ollama 모델도 선택할 수 있어요.</div></li>
+          <li><div>캐릭터 <b>몸통 → AI와 대화</b>를 누르고 메시지를 쓰세요. <kbd>Enter</kbd>로 보내고 <kbd>Shift</kbd> + <kbd>Enter</kbd>로 줄을 바꿔요. 곁채팅의 <b>↗</b>를 누르면 같은 대화를 큰 창에서 이어 가요.</div></li>
+        </ol>
+        <figure class="shot shot-chat">
+          <a class="shot-link" href="/assets/guide/chat.webp" data-title="큰 창에서 이어가는 AI 채팅" aria-label="큰 창에서 이어가는 AI 채팅 크게 보기">
+            <img src="/assets/guide/chat.webp" width="1600" height="1216" loading="lazy" decoding="async" alt="여행 계획을 묻는 예시 대화와 작업 선택 메뉴, 승인 모드가 보이는 채팅 입력창">
+          </a><figcaption>큰 창에서 이어가는 AI 채팅<a class="shot-open" href="/assets/guide/chat.webp" data-title="큰 창에서 이어가는 AI 채팅" aria-label="큰 창에서 이어가는 AI 채팅 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure>
+        <details class="more"><summary>AI 제공자와 모델을 고르는 화면 보기</summary><figure class="shot shot-ai">
+          <a class="shot-link" href="/assets/guide/ai.webp" data-title="AI 제공자와 모델 선택" aria-label="AI 제공자와 모델 선택 크게 보기">
+            <img src="/assets/guide/ai.webp" width="1600" height="1216" loading="lazy" decoding="async" alt="GPT 구독 제공자, 모델, 추론 단계와 ChatGPT 계정 연결 설정">
+          </a><figcaption>AI 제공자와 모델 선택<a class="shot-open" href="/assets/guide/ai.webp" data-title="AI 제공자와 모델 선택" aria-label="AI 제공자와 모델 선택 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure></details>
+        <details class="more"><summary>작업 진행 상황과 구독 한도는 어디서 봐요?</summary><p>채팅의 진행 표시를 펼치면 현재 단계와 경과 시간을 볼 수 있어요. 작업 중에 추가 지시를 보내거나 <b>중단</b>할 수도 있어요. 지원되는 구독 연결에서는 채팅 오른쪽 아래 원형 표시에 마우스를 올려 제공자가 알려 준 한도와 갱신 시각을 확인해요.</p></details>
+      </section>
+      <section class="chapter" id="tools">
+        <h2>검색과 파일·컴퓨터 작업</h2>
+        <p>GPT 또는 Claude 구독 연결에서 채팅 입력창의 작업 모드를 고르세요. <b>자동</b>으로 두면 요청에 맞춰 모드를 선택해요.</p>
+        <dl class="examples">
+          <dt>웹검색</dt><dd>“오늘 발표된 소식을 찾아서 출처와 함께 정리해 줘.”</dd>
+          <dt>파일 정리</dt><dd><b>폴더 선택</b> 후 “이 폴더의 PDF를 한곳에 모아 줘.” 계획의 대상과 경로를 확인하고, 이동은 <b>정리 실행</b>, ZIP 압축은 <b>압축 실행</b>을 누르세요.</dd>
+          <dt>작업·조작</dt><dd>“선택한 폴더에 회의록.md를 만들어 줘.” 파일 작성, 명령 실행, 화면 확인이나 앱 조작을 요청할 수 있어요.</dd>
+        </dl>
+        <figure class="shot shot-tools">
+          <a class="shot-link" href="/assets/guide/tools.webp" data-title="실행 전에 확인하는 파일 정리 계획" aria-label="실행 전에 확인하는 파일 정리 계획 크게 보기">
+            <img src="/assets/guide/tools.webp" width="1144" height="436" loading="lazy" decoding="async" alt="파일 세 개의 원래 경로와 정리할 경로, 취소와 정리 실행 버튼">
+          </a><figcaption>실행 전에 확인하는 파일 정리 계획<a class="shot-open" href="/assets/guide/tools.webp" data-title="실행 전에 확인하는 파일 정리 계획" aria-label="실행 전에 확인하는 파일 정리 계획 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure>
+        <details class="more"><summary>승인 방식과 Mac 권한을 바꾸려면?</summary><p>입력창의 <b>승인 요청</b>을 누르면 <b>내 대신 승인</b>, <b>전체 권한</b>을 포함한 각 방식의 범위가 나와요. 직접 확인하려면 승인 카드에서 파일 경로와 작업 내용을 읽고 <b>이번만 허용</b> 또는 <b>거절</b>을 선택하세요.</p><p>앱 클릭·입력에는 macOS <b>접근성</b>, 화면 캡처에는 <b>화면 기록</b> 권한이 필요해요. <b>설정 → 일반 → 컴퓨터 작업 권한</b>에서 열 수 있어요. 화면을 AI에게 보여 주는 작업에서는 캡처가 연결한 제공자에 전달될 수 있어요.</p></details>
+      </section>
+      <section class="chapter" id="memory">
+        <h2>작업과 기억</h2>
+        <p>한 채팅에서 여러 일을 번갈아 한다면 일마다 작업을 만들어 두세요. 다음번엔 그 작업의 목표와 기억을 불러와 이어갈 수 있어요.</p>
+        <ol class="howto">
+          <li><div><b>설정 → 작업·기억 → 새 작업</b>에서 이름과 목표를 적어요. 채팅의 작업 선택 메뉴에서 이어갈 일을 고르세요.</div></li>
+          <li><div><b>기억 남기기</b>로 결정 사항이나 선호를 저장하세요. 저장한 내용을 열어 고치고, 오래 보관할 기억은 <b>고정</b>해요.</div></li>
+          <li><div><b>보관 한도</b>를 바꾸고 <b>적용</b>을 누르세요. 저장 공간이 차면 오래되고 중요도가 낮은 내용부터 줄이거나 정리해요.</div></li>
+        </ol>
+        <figure class="shot shot-memory">
+          <a class="shot-link" href="/assets/guide/memory.webp" data-title="여행 준비 작업에 기억 남기기" aria-label="여행 준비 작업에 기억 남기기 크게 보기">
+            <img src="/assets/guide/memory.webp" width="1600" height="1216" loading="lazy" decoding="async" alt="작업·기억의 작업 목록과 선택한 여행 준비 작업의 목표, 다음 할 일, 저장한 기억">
+          </a><figcaption>여행 준비 작업에 기억 남기기<a class="shot-open" href="/assets/guide/memory.webp" data-title="여행 준비 작업에 기억 남기기" aria-label="여행 준비 작업에 기억 남기기 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure>
+        <p class="footnote">작업과 기억은 이 Mac에 저장돼요. 외부 AI로 대화하면 답변에 필요한 대화와 관련 기억이 연결한 제공자에게 전달돼요.</p>
+      </section>
+      <section class="chapter" id="notifications">
+        <h2>메신저 알림과 방 관리</h2>
+        <p>캐릭터 왼쪽 위의 <b>종</b>을 눌러 수신을 켜세요. 한 번 더 눌러 빗금이 생기면 알림이 꺼져요.</p>
+        <dl class="pairs">
+          <dt>처음 연결할 때</dt><dd><b>알림 → 알림 감시</b>를 켜면 카카오톡·디스코드 알림을 받아요. <b>권한 설정 열기</b>로 짜삐의 <b>전체 디스크 접근 권한</b>을 허용하고, 메신저 자체의 macOS 알림도 켜 두세요.</dd>
+          <dt>메시지 확인</dt><dd>새 알림은 캐릭터 옆 말풍선에 떠요. 숫자에 마우스를 올리면 방별 최신 메시지와 개수가 보여요. 오른쪽 화살표로 이전 메시지를 펼치고, 메시지를 눌러 메신저에서 확인하세요.</dd>
+          <dt>받을 방 고르기</dt><dd>새 방은 기본으로 수신해요. <b>방별 알림</b>에서 방을 끄거나 <b>방 설정</b>에서 포함·제외 키워드를 정하세요. <b>제외된 채팅 → 알림 다시 받기</b>로 해당 방의 새 알림을 다시 받을 수 있어요.</dd>
+        </dl>
+        <figure class="shot shot-notifications">
+          <a class="shot-link" href="/assets/guide/notifications.webp" data-title="받은 알림과 방별 수신 설정" aria-label="받은 알림과 방별 수신 설정 크게 보기">
+            <img src="/assets/guide/notifications.webp" width="1600" height="1216" loading="lazy" decoding="async" alt="메신저별 새 메시지와 방별 수신 스위치를 함께 보여 주는 알림 화면">
+          </a><figcaption>받은 알림과 방별 수신 설정<a class="shot-open" href="/assets/guide/notifications.webp" data-title="받은 알림과 방별 수신 설정" aria-label="받은 알림과 방별 수신 설정 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure>
+        <details class="more"><summary>놓친 알림을 한 번 더 받으려면?</summary><p><b>알림</b>에서 <b>미확인 알림 다시 알리기</b>를 켜세요. 현재 목록을 모두 정리하려면 <b>모두 확인</b>을 누르세요.</p></details>
+        <details class="more"><summary>알림을 눌러도 원하는 방이 열리지 않아요</summary><p>같은 이름의 방이 있거나 알림에서 목적지를 확인하기 어려울 수 있어요. 카카오톡은 방 연결에 정확한 채팅방 이름을, 디스코드는 해당 채널이나 메시지에서 복사한 링크를 입력하고 <b>연결하고 열기</b>를 누르세요. Mac이 방 탐색 권한을 묻는 경우 <b>접근성</b>에서 짜삐를 허용하세요.</p></details>
+      </section>
+      <section class="chapter" id="instagram">
+        <h2>인스타그램 DM</h2>
+        <p>캐릭터 <b>몸통 → 인스타그램 DM</b>을 누르면 Instagram 로그인 또는 받은 메시지함이 열려요. 처음에는 여기서 직접 로그인하고, 대화 목록에서 상대를 골라 메시지를 보내세요. 창 가장자리를 끌어 크기를 바꿀 수 있어요.</p>
+        <figure class="shot shot-pet-picker shot-compact">
+          <a class="shot-link" href="/assets/guide/pet-picker.webp" data-title="몸통을 눌렀을 때 열리는 선택창" aria-label="몸통을 눌렀을 때 열리는 선택창 크게 보기">
+            <img src="/assets/guide/pet-picker.webp" width="750" height="522" loading="lazy" decoding="async" alt="AI와 대화와 인스타그램 DM 두 항목을 보여 주는 짜삐 채팅 선택창">
+          </a><figcaption>몸통을 눌렀을 때 열리는 선택창<a class="shot-open" href="/assets/guide/pet-picker.webp" data-title="몸통을 눌렀을 때 열리는 선택창" aria-label="몸통을 눌렀을 때 열리는 선택창 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure>
+        <p>짜삐는 이 Mac의 로그인 세션을 다음 실행에도 사용해요. Instagram이 다시 인증을 요구하면 열린 로그인 화면에서 진행하세요. 새 DM의 보낸 사람이나 미리보기를 받지 못한 경우에는 일반 DM 알림을 표시해요.</p>
+      </section>
+      <section class="chapter" id="daily">
+        <h2>급식과 카메라 거울</h2>
+        <p><strong>입을 누르면</strong> 경북소프트웨어마이스터고등학교의 급식이 떠요. 다시 누르거나 바깥을 클릭해 닫으세요. 다른 날은 <b>생활 → 급식</b>에서 날짜 화살표로 찾고, <b>지금 급식</b>으로 돌아와요.</p>
+        <dl class="meal-clock" aria-label="한국 시간 기준 급식 전환"><div><dt>08:00</dt><dd>점심으로</dd></div><div><dt>14:00</dt><dd>저녁으로</dd></div><div><dt>20:00</dt><dd>다음 날 아침으로</dd></div></dl>
+        <figure class="shot shot-meals">
+          <a class="shot-link" href="/assets/guide/meals.webp" data-title="날짜별로 살펴보는 급식표" aria-label="날짜별로 살펴보는 급식표 크게 보기">
+            <img src="/assets/guide/meals.webp" width="1600" height="1216" loading="lazy" decoding="async" alt="생활의 급식 화면에 날짜 선택, 지금 급식 버튼과 조식·중식 예시 메뉴가 표시된 모습">
+          </a><figcaption>날짜별로 살펴보는 급식표<a class="shot-open" href="/assets/guide/meals.webp" data-title="날짜별로 살펴보는 급식표" aria-label="날짜별로 살펴보는 급식표 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure>
+        <p id="mirror"><strong>눈을 누르면</strong> 카메라 거울이 열려요. 처음에 카메라 사용을 허용하고, 다시 눈을 눌러 닫으세요. 카메라가 실시간으로 비추며 사진이나 영상 파일은 저장하지 않아요. 얼굴 클릭 기능은 <b>설정 → 일반 → 클릭 기능</b>에서 각각 켜거나 끌 수 있어요.</p>
+      </section>
+      <section class="chapter" id="music">
+        <h2>음악과 재생 카드</h2>
+        <p>Spotify나 Apple Music에서 곡을 틀고 캐릭터의 <strong>귀</strong>를 누르세요. 캐릭터에 따라 뿔이나 집게가 같은 역할을 해요. 재생 카드에서 곡을 확인하고 재생·일시정지하거나 다음 곡으로 넘길 수 있어요. 귀를 다시 누르면 카드가 닫혀요.</p>
+        <details class="more preview"><summary><span>미리보기</span> Chrome 유튜브도 카드에 담기</summary>
+          <p>아래는 <b>v0.2.1 이후 개발판</b>의 기능이에요. 이 버전에서는 <b>설정 → 일반 → 클릭 기능 → 유튜브 연결하기</b>를 누르면 연결된 Chrome을 확인해요. 첫 연결은 도우미의 폴더를 개발자 모드가 켜진 Chrome 확장 프로그램 화면에 끌어 놓으세요. 이미 열려 있던 YouTube 탭은 한 번 새로고침해요.</p>
+          <p>귀를 누르면 현재 또는 최근에 재생한 항목이 떠요. 카드를 누르면 <b>Spotify · Apple Music</b>과 <b>재생 소리</b>가 펼쳐져요. 원하는 줄에서 재생을 조작하거나 제목을 눌러 출처로 이동하세요.</p>
+          <figure class="shot shot-pet-music shot-compact">
+          <a class="shot-link" href="/assets/guide/pet-music.webp" data-title="개발판의 펼친 재생 카드" aria-label="개발판의 펼친 재생 카드 크게 보기">
+            <img src="/assets/guide/pet-music.webp" width="672" height="340" loading="lazy" decoding="async" alt="음악 앱과 Chrome 오디오가 두 줄로 나뉘어 각각 재생 버튼을 제공하는 개발판 카드">
+          </a><figcaption>개발판의 펼친 재생 카드<a class="shot-open" href="/assets/guide/pet-music.webp" data-title="개발판의 펼친 재생 카드" aria-label="개발판의 펼친 재생 카드 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure>
+        </details>
+      </section>
+      <section class="chapter" id="shortcuts">
+        <h2>웹·앱 바로가기</h2>
+        <p><b>생활 → 바로가기</b>에서 자주 가는 곳을 모아 두세요. 열고 싶은 곳에 따라 두 가지로 저장할 수 있어요.</p>
+        <dl class="pairs">
+          <dt>자주 가는 곳</dt><dd><b>추가</b>를 누르고 웹페이지 주소를 입력하거나 <b>앱 선택</b>으로 Mac 앱을 고른 뒤 저장하세요. 목록의 이름을 누르면 열려요.</dd>
+          <dt>선택창 서비스</dt><dd>캐릭터를 눌렀을 때 AI와 Instagram 옆에 띄우고 싶은 웹서비스를 <b>추가</b>하세요. 다음부터는 몸통을 누르고 그 서비스를 고르면 작은 창에서 열려요.</dd>
+        </dl>
+        <figure class="shot shot-shortcuts">
+          <a class="shot-link" href="/assets/guide/shortcuts.webp" data-title="두 곳에 저장하는 바로가기" aria-label="두 곳에 저장하는 바로가기 크게 보기">
+            <img src="/assets/guide/shortcuts.webp" width="1600" height="1216" loading="lazy" decoding="async" alt="바로가기 화면에 선택창 서비스와 자주 가는 곳을 등록한 예시">
+          </a><figcaption>두 곳에 저장하는 바로가기<a class="shot-open" href="/assets/guide/shortcuts.webp" data-title="두 곳에 저장하는 바로가기" aria-label="두 곳에 저장하는 바로가기 크게 보기">크게 보기 ↗</a></figcaption>
+        </figure>
+      </section>
+      <div class="guide-end"><a href="#top" id="back-top">맨 위로 ↑</a><a href="/#download">짜삐 다운로드 페이지</a></div>
+    </div>
+  </div>
+</main>
+<footer class="guide-footer"><a class="logo" href="/">Jjappi</a><p>앱 화면의 대화·알림·식단에는 사용법을 보여 주는 예시 데이터를 사용했어요.</p></footer>
+<dialog id="photo-dialog" aria-labelledby="photo-title"><div class="photo-bar"><p id="photo-title">화면 크게 보기</p><button type="button" data-zoom aria-pressed="false">확대</button><button type="button" data-close aria-label="확대 화면 닫기" autofocus>닫기 <span aria-hidden="true">×</span></button></div><div class="photo-scroll"><img alt=""></div></dialog>
+</body></html>
