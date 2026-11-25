@@ -86,6 +86,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .download-box { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-xl); align-items: start; }
 .download-title { font-family: var(--round); font-weight: 800 !important; font-size: clamp(30px, 3vw, 38px) !important; color: var(--ink); letter-spacing: -.5px; line-height: 1.1 !important; }
 .download .version { margin: var(--space-sm) 0 var(--space-lg); }
+.download-formats { display: flex; flex-wrap: wrap; gap: 12px; }
 .steps { margin: 0; padding: 0; list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: var(--space-md); }
 .steps li { counter-increment: step; display: grid; grid-template-columns: 32px 1fr; gap: var(--space-sm); color: var(--ink-soft); }
 .steps li::before { content: counter(step); width: 28px; height: 28px; border-radius: 50%; background: var(--pink-soft); color: var(--pink); display: grid; place-items: center; font-family: var(--round); font-weight: 800; font-size: 15px; }
